@@ -25,17 +25,6 @@ MyWidget::MyWidget(QWidget *parent):QWidget(parent)
 
 
 
- class GLobj : public GLobj
- {
- public:
-     GLobj(QObject *parent, int d = 64, qreal s = 1.0);
-     ~GLobj();
-     void initializeGL();
-     void draw();
-
- };
-
-
 
 
 
