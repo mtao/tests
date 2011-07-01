@@ -1,14 +1,18 @@
 #import <Eigen/Core>
-class coord {
+class Coord {
     public:
-        cord (double x, double y, double z);
-        cord (double x, double y, double z,  Matrix<double, 3,1> e1,Matrix<double, 3,1> e2,Matrix<double, 3,1> e3);
-        double x(){return coord[3,0];}
-        double y(){return coord[3,1];}
-        double z(){return coord[3,2];}
+        Coord (double x, double y, double z);
+        Coord (double x, double y, double z,  Vector3d u, Vector3d v, Vector3d w);
+        double x(){return x;}
+        double y(){return y;}
+        double z(){return z;}
+        Vector3d u(){return u;}
+        Vector3d v(){return v;}
+        Vector3d w(){return w;}
         Vector3d pos3d(){return Vector3d(x,y,z);}
-        Vector4d pos4d(){return Vector4d(x,y,z,1);}
     
     private:
-        Matrix<double,4,4> coord;
+	double x,y,z;
+	Vector3d u,v,w;
+
 };
