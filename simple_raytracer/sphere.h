@@ -4,8 +4,7 @@ class Sphere {
 		Sphere(Coord pos, Material mat);
 		Sphere(Coord pos, double radius);
 		Sphere(Coord pos, double radius, Material mat);
-		RGBColor intersect(Ray& r);
-		RGBColor intersect(Ray& r, unsigned int bounces_left);
+		RGBColor intersect(Ray& r, unsigned int bounces_left = 0);
 		double does_intersect(Ray r);
 		double radius(){return radius;}
 		double pos(){return pos;}
