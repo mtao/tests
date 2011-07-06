@@ -26,12 +26,11 @@ RGBColor& RGBColor::operator *(RGBColor x, double c){
 	return RGBColor(x.rgb_ * c);
 }
 
-void RGBColor::truncate(){
+void RGBColor::clamp(){
 	if (rgb_[0]>1.0){rgb[0]=1.0;}
 	if (rgb_[1]>1.0){rgb[1]=1.0;}
 	if (rgb_[2]>1.0){rgb[2]=1.0;}
-	if (rgb_[0]<0){rgb[0]=0.0}
-	if (rgb_[1]<0){rgb[1]=0.0}
-	if (rgb_[2]<0){rgb[2]=0.0}
-
+	if (rgb_[0]<0){rgb[0]=0.0;}
+	if (rgb_[1]<0){rgb[1]=0.0;}
+	if (rgb_[2]<0){rgb[2]=0.0;}
 }
