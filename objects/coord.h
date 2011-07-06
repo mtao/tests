@@ -2,17 +2,17 @@
 class Coord {
     public:
         Coord (double x, double y, double z);
-        Coord (double x, double y, double z,  Vector3d u, Vector3d v, Vector3d w);
-        double x(){return x;}
-        double y(){return y;}
-        double z(){return z;}
-        Vector3d u(){return u;}
-        Vector3d v(){return v;}
-        Vector3d w(){return w;}
+        Coord (double x, double y, double z,  Vector3d i, Vector3d j, Vector3d k);
+        double x(){return x_;}
+        double y(){return y_;}
+        double z(){return z_;}
+        Vector3d u(){return i_;}
+        Vector3d v(){return j_;}
+        Vector3d w(){return k_;}
         Vector3d pos3d(){return Vector3d(x,y,z);}
     
     private:
-	double x,y,z;
-	Vector3d u,v,w;
+	double x_,y_,z_;
+	Vector3d i_,j_,k_;
 
 };
