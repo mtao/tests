@@ -1,5 +1,5 @@
-#import <Eigen/Core>
-#import "color.h"
+#include <Eigen/Core>
+#include "color.h"
 
 class RGBColor: RGBColor{
 
@@ -14,4 +14,4 @@ class RGBColor: RGBColor{
 	private:
 		Array<double,3,1> rgb_;
 
-}
+};

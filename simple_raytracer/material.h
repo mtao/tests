@@ -1,5 +1,5 @@
-#import "rgbcolor.h"
-#import "scene.h"
+#include "rgbcolor.h"
+#include "scene.h"
 
 class Material{
 	public:

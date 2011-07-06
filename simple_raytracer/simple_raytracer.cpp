@@ -1,21 +1,19 @@
-#define WIDTH 256
-#define HEIGHT 256
 #include "simple_raytracer.h"
 
-Matrix3d world2cam(Coord& coord){
+Matrix3d SimpleRaytracer::world2cam(Coord& coord){
 	Matrix3d ret;
 	for(int i=0;i<3; i++){
-		ret[i][0]=coord.u()[i];
-		ret[i][1]=coord.v()[i];
-		ret[i][2]=coord.w()[i];
+		ret[i][0]=coord.x()[i];
+		ret[i][1]=coord.y()[i];
+		ret[i][2]=coord.z()[i];
 	}
 	return ret;
 }
 
 
-%Camera operates as if it is -1 in the z direction facing to +1 in z direction.
-void render(int width, int height, int fov, Coord& cam){
-	RGBColor** screen=malloc(sizeof(RGBColor*)*WIDTH);
+//Camera operates as if it is -1 in the z direction facing to +1 in z direction.
+void SimpleRaytracer::render(int width, int height, int fov, Coord& cam){
+	Color** screen=malloc(sizeof(RGBColor*)*WIDTH);
 	if (screen==NULL){return -1;}
 	for(int i=0; i<WIDTH; i++){
 		screen[i]=malloc(sizeof(RGBColor)*HEIGHT);
@@ -40,6 +38,8 @@ void render(int width, int height, int fov, Coord& cam){
 
 int main(){
 	%need a mechanism for the scene itself
+	int width=320;
+	int height=240;
 	SimpleScene scene();
 	PhongMaterial metal(RGBColor(0.1,0.1,0.1),RGBColor(0.8,0.8,0.8),RGBColor(0.8,0.8,0.8));
 	scene.push_obj(Sphere(Coord(0,0,4)),metal);
