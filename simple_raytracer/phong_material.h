@@ -1,4 +1,4 @@
-class PhongMaterial: Material{
+class PhongMaterial: public Material {
 	public:
 		PhongMaterial(Scene* scene, RGBColor ambient, RGBColor diffuse, RGBColor specular, double specular_pow);
 		PhongMaterial(Scene* scene, RGBColor ambient, RGBColor diffuse, RGBColor specular, double specular_pow, bool translucent);
@@ -8,4 +8,4 @@ class PhongMaterial: Material{
 		RGBColor specular_;
 		double specular_pow_;
 		bool translucent_;
-}
+};

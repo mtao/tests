@@ -1,4 +1,4 @@
-#import <Eigen/Core>
+#include <Eigen/Core>
 class Coord {
     public:
         Coord (double x, double y, double z);

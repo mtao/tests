@@ -4,13 +4,15 @@
 #include "scene.h"
 #include "rgbcolor.h"
 
-class SimpleRaytracer{
+class SimpleRaytracer {
+
 	public:
-		SimpleRaytracer(Scene &scene) :scene_(scene){}
+		SimpleRaytracer(Scene &scene) : scene_(scene) {}
 		void set_scene(Scene &scene) {scene_=scene;}
 
-		render(int width, int height, int fov, Coord& cam);
+		void render(int width, int height, int fov, Coord& cam);
+
 	private:
 		Scene &scene_;
 
-}
+};

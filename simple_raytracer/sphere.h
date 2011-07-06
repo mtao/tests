@@ -1,4 +1,4 @@
-class Sphere{
+class Sphere {
 
 	public:
 		Sphere(Coord pos, Material mat);
