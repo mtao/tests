@@ -24,7 +24,7 @@ public:
 	double r() { return rgb_[0]; }
 	double g() { return rgb_[1]; }
 	double b() { return rgb_[2]; }
-	void truncate();
+	void clamp();
 
 
 	// compound assignment operators

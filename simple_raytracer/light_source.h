@@ -2,12 +2,13 @@
 #define LIGHT_SOURCE_H_
 
 #include "rgbcolor.h"
-#include "intersection.h"
+class Material;
+class Ray;
 
 class LightSource {
 
 	public:
-		virtual RGBColor shade(Ray const& ray, Ray const& incident, Material& mat) = 0;
+		virtual RGBColor shade(Ray const& ray, Ray const& incident, Material& mat) const = 0;
 		
 };
 

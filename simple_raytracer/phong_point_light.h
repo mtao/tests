@@ -5,11 +5,12 @@
 #include "rgbcolor.h"
 #include "coord.h"
 class Ray;
+class Material;
 
 class PhongPointLight: public LightSource {
 	public:
 		PhongPointLight(Coord pos, RGBColor ambient, RGBColor diffuse, RGBColor specular);
-		RGBColor shade(Ray const& ray, Ray const& incident, Material& mat);
+		RGBColor shade(Ray const& ray, Ray const& incident, Material& mat) const;
 		
 	private:
 		Coord pos_;

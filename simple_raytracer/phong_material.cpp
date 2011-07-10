@@ -1,6 +1,7 @@
 #include "phong_material.h"
 #include "scene.h"
 #include "rgbcolor.h"
+#include "light_source.h"
 
 PhongMaterial::PhongMaterial(Scene& scene, RGBColor ambient, RGBColor diffuse, RGBColor specular, double specular_pow) :
 	Material(scene),
@@ -23,14 +24,12 @@ PhongMaterial::PhongMaterial(Scene& scene, RGBColor ambient, RGBColor diffuse, R
 }
 
 RGBColor PhongMaterial::intersect(Ray const& r, Ray const& incident) {
-	vector<PhongLightSource> lights = scene.lights();
-	unsigned int num_lights = lights->size();
-	RGBColor col(0.0,0.0,0.0);
+	RGBColor col; // black
 
-	for(i=0; i < num_lights; i++) {
-		col+=lights[i].shade(r,incident,this);
+	for(Scene::LightIter l = scene().light_begin(); l != scene().light_end(); ++l) {
+		col += (*l)->shade(r, incident, *this);
 	}
 
 	col.clamp();
-		
+	return col;
 }

@@ -1,6 +1,6 @@
 #include "simple_scene.h"
 
-RGBColor SimpleScene::cast_ray(Ray const& ray){
+RGBColor SimpleScene::cast_ray(Ray const& ray) const {
 	double minlambda = -1.0;
 	double newlambda;
 
@@ -21,9 +21,4 @@ RGBColor SimpleScene::cast_ray(Ray const& ray){
 		return RGBColor();
 	}
 }
-void SimpleScene::push_obj(Object* obj) {
-	objects_.push_back(obj);
-}
-void SimpleScene::push_light(LightSource* light) {
-	lights_.push_back(light);
-}
+

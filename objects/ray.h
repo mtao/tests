@@ -4,6 +4,8 @@
 #include "coord.h"
 #include <Eigen/Core>
 
+using Eigen::Vector3d;
+
 struct Ray {
 	Coord start;
 	Vector3d dir;
