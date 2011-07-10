@@ -10,9 +10,14 @@ class Material {
 		virtual ~Material();
 
 	public:
-		virtual RGBColor intersect(Ray const& ray, Ray const& incident) = 0;
+		virtual RGBColor intersect(Ray const& ray, Ray const& incident) const = 0;
+		virtual RGBColor ambient() const = 0;
+		virtual RGBColor diffuse() const = 0;
+		virtual RGBColor specular() const = 0;
+		virtual double specular_pow() const = 0;
 
 		Scene& scene() { return scene_; }
+		Scene const& scene() const { return scene_; }
 
 	private:
 		Scene& scene_;

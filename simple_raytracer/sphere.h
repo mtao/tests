@@ -5,22 +5,23 @@
 #include "rgbcolor.h"
 #include "coord.h"
 
+class Material;
+
 class Sphere : public Object {
 
 	public:
 		Sphere(Coord pos, Material& mat);
 		Sphere(Coord pos, double radius);
 		Sphere(Coord pos, double radius, Material& mat);
-		RGBColor intersect(Ray& r, unsigned int bounces_left = 0);
-		double does_intersect(Ray r);
+		RGBColor intersect(Ray const& r, unsigned int bounces_left) const;
+		double does_intersect(Ray const& r) const;
 		double radius() { return radius_; }
-		Coord pos() { return pos_; }
+		Coord pos() const { return pos_; }
 
 	private:
-		double radius_;
-		double sphere_intersect(Ray& r);
-
 		Coord pos_;
+		double radius_;
+		double sphere_intersect(Ray const& r) const;
 		Material& mat_;
 
 };

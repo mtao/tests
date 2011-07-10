@@ -1,10 +1,10 @@
 #ifndef SCENE_H_
 #define SCENE_H_
 
-#include "ray.h"
+#include "rgbcolor.h"
 #include <vector>
 
-class RGBColor;
+class Ray;
 class LightSource;
 class Object;
 

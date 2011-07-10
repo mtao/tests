@@ -10,7 +10,11 @@ class PhongMaterial: public Material {
 		PhongMaterial(Scene& scene, RGBColor ambient, RGBColor diffuse, RGBColor specular, double specular_pow, bool translucent);
 
 	public:
-		RGBColor intersect(Ray const& r, Ray const& incident);
+		RGBColor intersect(Ray const& r, Ray const& incident) const;
+		RGBColor ambient() const { return ambient_; }
+		RGBColor diffuse() const { return diffuse_; }
+		RGBColor specular() const { return specular_; }
+		double specular_pow() const { return specular_pow_; }
 
 	private:
 		RGBColor ambient_;

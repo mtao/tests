@@ -10,8 +10,6 @@ class SimpleScene: public Scene {
 		SimpleScene() { }
 
 		RGBColor cast_ray(Ray const& r) const;
-
-	private:
 };
 
 #endif /* SIMPLE_SCENE_H_ */

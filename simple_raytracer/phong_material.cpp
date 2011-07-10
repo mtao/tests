@@ -23,13 +23,13 @@ PhongMaterial::PhongMaterial(Scene& scene, RGBColor ambient, RGBColor diffuse, R
 
 }
 
-RGBColor PhongMaterial::intersect(Ray const& r, Ray const& incident) {
-	RGBColor col; // black
+RGBColor PhongMaterial::intersect(Ray const& r, Ray const& incident) const {
+	RGBColor col(ColorOps::black);
 
 	for(Scene::LightIter l = scene().light_begin(); l != scene().light_end(); ++l) {
 		col += (*l)->shade(r, incident, *this);
 	}
 
-	col.clamp();
+	ColorOps::clamp(col);
 	return col;
 }

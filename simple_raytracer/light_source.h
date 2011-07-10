@@ -8,7 +8,7 @@ class Ray;
 class LightSource {
 
 	public:
-		virtual RGBColor shade(Ray const& ray, Ray const& incident, Material& mat) const = 0;
+		virtual RGBColor shade(Ray const& ray, Ray const& incident, Material const& mat) const = 0;
 		
 };
 
