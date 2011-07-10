@@ -1,3 +1,6 @@
+#ifndef SIMPLE_RAYTRACER_H_
+#define SIMPLE_RAYTRACER_H_
+
 #include <Eigen/Core>
 #include "../objects/ray.h"
 #include "phong_material.h"
@@ -16,3 +19,7 @@ class SimpleRaytracer {
 		Scene &scene_;
 
 };
+
+
+#endif /* SIMPLE_RAYTRACER_H_ */
+

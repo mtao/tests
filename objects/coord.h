@@ -1,4 +1,9 @@
+#ifndef COORD_H_
+#define COORD_H_
+
 #include <Eigen/Core>
+using Eigen::Vector3d;
+
 class Coord {
     public:
         Coord (Vector3d pos);
@@ -11,3 +16,7 @@ class Coord {
 	Vector3d pos_,x_,y_,z_;
 
 };
+
+
+#endif /* COORD_H_ */
+

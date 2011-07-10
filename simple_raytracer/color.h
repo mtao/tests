@@ -1,6 +1,13 @@
-class Color{
-	public:
-		virtual Color operator +(Color y) = 0;
-		virtual Color operator *(Color y) = 0;
-		virtual Color operator *(double c) = 0;
+#ifndef COLOR_H_
+#define COLOR_H_
+
+
+class Color {
+public:
+	Color();
+	virtual ~Color();
+
 };
+
+#endif /* COLOR_H_ */
+

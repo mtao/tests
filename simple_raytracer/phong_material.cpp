@@ -1,28 +1,29 @@
+#include "phong_material.h"
 #include "scene.h"
-#include "RGBColor.h"
+#include "rgbcolor.h"
 
-PhongMaterial::PhongMaterial(Scene* scene, RGBColor ambient, RGBColor diffuse, RGBColor specular, double specular_pow){
-	ambient_=ambient;
-	diffuse_=diffuse;
-	specular_=specular;
-	specular_pow_=specular_pow;
-	translucent_=0;
-	scene_=scene;
-
-}
-
-PhongMaterial::PhongMaterial(Scene* scene, RGBColor ambient, RGBColor diffuse, RGBColor specular, double specular_pow, bool translucent){
-	ambient_=ambient;
-	diffuse_=diffuse;
-	specular_=specular;
-	specular_pow_=specular_pow;
-	translucent_=translucent;
-	scene_=scene;
+PhongMaterial::PhongMaterial(Scene& scene, RGBColor ambient, RGBColor diffuse, RGBColor specular, double specular_pow) :
+	Material(scene),
+	ambient_(ambient),
+	diffuse_(diffuse),
+	specular_(specular),
+	specular_pow_(specular_pow),
+	translucent_(0) {
 
 }
 
-RGBColor PhongMaterial::intersect(Ray& r, Ray& incident){
-	vector<PhongLightSource> lights = scene->lights();
+PhongMaterial::PhongMaterial(Scene& scene, RGBColor ambient, RGBColor diffuse, RGBColor specular, double specular_pow, bool translucent) :
+	Material(scene),
+	ambient_(ambient),
+	diffuse_(diffuse),
+	specular_(specular),
+	specular_pow_(specular_pow),
+	translucent_(translucent) {
+
+}
+
+RGBColor PhongMaterial::intersect(Ray const& r, Ray const& incident) {
+	vector<PhongLightSource> lights = scene.lights();
 	unsigned int num_lights = lights->size();
 	RGBColor col(0.0,0.0,0.0);
 
