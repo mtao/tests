@@ -7,8 +7,8 @@ RGBColor SimpleScene::cast_ray(Ray const& ray) const {
 
 	ObjectIter closest = obj_end();
 	for(ObjectIter i = obj_begin(); i != obj_end(); ++i) {
-		newlambda = (*i)->does_intersect(ray);
-		if (minlambda != -1 || (newlambda > 0 && minlambda > newlambda)) {
+		newlambda = (*i)->intersect_lambda(ray);
+		if (minlambda != -1.0 || (newlambda > 0 && minlambda > newlambda)) {
 			minlambda = newlambda;
 			closest = i;
 		}

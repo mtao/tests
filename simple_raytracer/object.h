@@ -10,17 +10,21 @@
 
 #include "coord.h"
 #include "rgbcolor.h"
+#include "ray.h"
+#include "material.h"
 class Ray;
 
 class Object {
 
 public:
+	Object(Material& mat): mat_(mat){}
 	virtual ~Object();
-
-public:
-	virtual RGBColor intersect(Ray const& r, unsigned int bounces_left = 0) const = 0;
 	virtual Coord pos() const = 0;
-	virtual double does_intersect(Ray const& r) const = 0;
+	virtual double intersect_lambda(Ray const& r) const = 0;
+	virtual Ray incident(Vector3d const& pos) const = 0;
+	RGBColor intersect(Ray const& r, unsigned int bounces_left=0) const;
+private:
+	Material& mat_;
 
 };
 

@@ -3,7 +3,7 @@
 #include "math.h"
 #include "material.h"
 
-double Sphere::sphere_intersect(Ray const& r) const {
+double Sphere::intersect_lambda(Ray const& r) const {
 	//More numerical accuracy if the factors of 2 are removed
 	//A2 denotes the value of A/2
 	//<d,d>x^2 + 2<r,d>x + <p,p>=1
@@ -29,35 +29,6 @@ double Sphere::sphere_intersect(Ray const& r) const {
 	}
 }
 
-
-
-Sphere::Sphere(Coord p, Material& m) :
-	pos_(p),
-	radius_(1),
-	mat_(m) {
+Ray Sphere::incident(Vector3d const& pos) const {
+	return Ray(pos,pos.normalized());
 }
-
-Sphere::Sphere(Coord pos, double radius, Material& mat) :
-	pos_(pos),
-	radius_(radius),
-	mat_(mat) {
-
-}
-
-double Sphere::does_intersect(Ray const& r) const {
-	return sphere_intersect(r);
-}
-
-//TODO intersect should just pass material + normal information back?
-RGBColor Sphere::intersect(Ray const& r, unsigned int bounces_left) const {
-	double lambda = sphere_intersect(r);
-	Vector3d pos = r.start.pos + lambda * r.dir;
-	if (bounces_left <= 0) {
-		Ray incident = {Coord(pos), pos};
-		return mat_.intersect(r, incident);
-	} else {
-		//TODO: add support for moving around scene?
-		return intersect(r, 0);
-	}
-}
-

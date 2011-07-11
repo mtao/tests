@@ -22,6 +22,7 @@ HEADERS += color.h \
            simple_raytracer.h \
            simple_scene.h \
            sphere.h \
+	   triangle.h \
            ../objects/ray.h \
            ../objects/coord.h
 SOURCES += main.cpp \
@@ -34,4 +35,5 @@ SOURCES += main.cpp \
            simple_raytracer.cpp \
            simple_scene.cpp \
            sphere.cpp \
+	   triangle.cpp \
            ../objects/ray.cpp \
