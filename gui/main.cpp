@@ -1,9 +1,8 @@
-/*
- * main.cpp
- *
- *  Created on: Jul 10, 2011
- *      Author: Alexander Kondratskiy
- */
+#include <QtCore>
+#include <QApplication>
+#include <QMainWindow>
+
+#include "RenderGui/ImageViewer.h"
 
 #include "scene.h"
 #include "phong_material.h"
@@ -11,10 +10,18 @@
 #include "phong_point_light.h"
 #include "simple_scene.h"
 #include "simple_raytracer.h"
-#include "array_buffer.h"
+#include "RenderGui/qimage_buffer.h"
 
-int main() {
-	// need a mechanism for the scene itself
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+
+    QMainWindow* window = new QMainWindow();
+    RenderGui::Viewer* viewer = new RenderGui::Viewer();
+    window->setCentralWidget(viewer);
+    window->show();
+
 	int width = 320;
 	int height = 240;
 
@@ -36,7 +43,10 @@ int main() {
 
 	Coord cam(0,0,-1);
 	SimpleRaytracer raytracer(scene);
-	ArrayBuffer buffer(width, height);
+	QImageBuffer buffer(width, height);
 	raytracer.render(buffer, 60, cam);
-	// store rays somehow
+
+	viewer->showImage(buffer.qimage());
+	
+    return a.exec();
 }

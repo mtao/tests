@@ -18,6 +18,7 @@ namespace ColorOps {
 	const RGBColor black(0.0, 0.0, 0.0);
 	const RGBColor white(1.0, 1.0, 1.0);
 	void clamp(RGBColor& rgb);
+	unsigned int toUint(RGBColor const&);
 }
 
 //class RGBColor {
