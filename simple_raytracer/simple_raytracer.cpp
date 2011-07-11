@@ -2,6 +2,7 @@
 #include "Eigen/Core"
 #include "Eigen/LU"
 using Eigen::Matrix3d;
+using namespace std;
 typedef Eigen::Array<RGBColor, Eigen::Dynamic, Eigen::Dynamic> Image;
 
 namespace {
@@ -28,6 +29,7 @@ void SimpleRaytracer::render(int width, int height, int fov, Coord& cam) {
 			Vector3d cam_ray_dir = Vector3d(i * scale_factor, j * scale_factor, 1);
 			Ray ray(cam, cam2world * cam_ray_dir);
 			screen(i,j) = scene_.cast_ray(ray);
+			cout << "(" << i << "," << j << ") ";
 		}
 	}
 

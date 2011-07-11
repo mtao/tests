@@ -14,8 +14,8 @@
 
 int main(){
 	// need a mechanism for the scene itself
-	int width = 320;
-	int height = 240;
+	int width = 10;//320;
+	int height = 10;//240;
 
 	SimpleScene scene;
 	PhongMaterial metal(scene,

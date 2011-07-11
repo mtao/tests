@@ -2,6 +2,7 @@
 #include "ray.h"
 #include "math.h"
 #include "material.h"
+using namespace std;
 
 double Sphere::intersect_lambda(Ray const& r) const {
 	//More numerical accuracy if the factors of 2 are removed
@@ -30,5 +31,6 @@ double Sphere::intersect_lambda(Ray const& r) const {
 }
 
 Ray Sphere::incident(Vector3d const& pos) const {
+	cout << "intersected with sphere\n";
 	return Ray(pos,pos.normalized());
 }
