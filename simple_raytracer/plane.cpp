@@ -2,7 +2,7 @@
 #include "ray.h"
 #include "math.h"
 #include "material.h"
-
+#include <iostream>
 
 using namespace std;
 

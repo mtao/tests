@@ -1,4 +1,5 @@
 #include "simple_scene.h"
+#include <iostream>
 #include "object.h"
 using namespace std;
 RGBColor SimpleScene::cast_ray(Ray const& ray) const {
