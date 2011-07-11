@@ -2,7 +2,7 @@
 #include <QApplication>
 #include <QMainWindow>
 
-#include "RenderGui/ImageViewer.h"
+#include "src/ImageViewer.h"
 
 #include "scene.h"
 #include "phong_material.h"
@@ -10,7 +10,7 @@
 #include "phong_point_light.h"
 #include "simple_scene.h"
 #include "simple_raytracer.h"
-#include "RenderGui/qimage_buffer.h"
+#include "src/qimage_buffer.h"
 
 
 int main(int argc, char *argv[])
