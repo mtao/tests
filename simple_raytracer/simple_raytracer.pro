@@ -24,8 +24,10 @@ HEADERS += color.h \
            sphere.h \
            buffer.h \
            array_buffer.h \
+           triangle.h \
            ../objects/ray.h \
            ../objects/coord.h
+
 SOURCES += main.cpp \
            material.cpp \
            object.cpp \
@@ -37,4 +39,5 @@ SOURCES += main.cpp \
            simple_scene.cpp \
            sphere.cpp \
            buffer.cpp \
+           triangle.cpp \
            ../objects/ray.cpp \

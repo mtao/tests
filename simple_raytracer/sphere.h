@@ -10,11 +10,10 @@ class Material;
 class Sphere : public Object {
 
 	public:
-		Sphere(Coord pos, Material& mat);
-		Sphere(Coord pos, double radius);
-		Sphere(Coord pos, double radius, Material& mat);
-		RGBColor intersect(Ray const& r, unsigned int bounces_left) const;
-		double does_intersect(Ray const& r) const;
+		Sphere(Coord pos, Material& mat): Object(mat), pos_(pos), radius_(1.0){}
+		Sphere(Coord pos, double radius, Material& mat):Object(mat), pos_(pos), radius_(radius){}
+		double intersect_lambda(Ray const& r) const;
+		Ray incident(Vector3d const& pos) const;
 		double radius() { return radius_; }
 		Coord pos() const { return pos_; }
 
@@ -22,7 +21,6 @@ class Sphere : public Object {
 		Coord pos_;
 		double radius_;
 		double sphere_intersect(Ray const& r) const;
-		Material& mat_;
 
 };
 
