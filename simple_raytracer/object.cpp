@@ -18,6 +18,7 @@ RGBColor Object::intersect(Ray const& r, unsigned int bounces_left) const {
 		Ray inc = incident(pos);
 		return mat_.intersect(r, inc);
 	} else {
+		return ColorOps::black;
 		//TODO: add support for moving around scene?
 		//mat_intersect(r, );
 	}

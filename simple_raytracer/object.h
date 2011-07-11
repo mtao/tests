@@ -19,7 +19,6 @@ class Object {
 public:
 	Object(Material& mat): mat_(mat){}
 	virtual ~Object();
-	virtual Coord pos() const = 0;
 	virtual double intersect_lambda(Ray const& r) const = 0;
 	virtual Ray incident(Vector3d const& pos) const = 0;
 	RGBColor intersect(Ray const& r, unsigned int bounces_left=0) const;

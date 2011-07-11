@@ -23,6 +23,7 @@ HEADERS += color.h \
            simple_scene.h \
            sphere.h \
 	   triangle.h \
+	   plane.h \
            ../objects/ray.h \
            ../objects/coord.h
 SOURCES += main.cpp \
@@ -36,4 +37,5 @@ SOURCES += main.cpp \
            simple_scene.cpp \
            sphere.cpp \
 	   triangle.cpp \
+	   plane.cpp \
            ../objects/ray.cpp \
