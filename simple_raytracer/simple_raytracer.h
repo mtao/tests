@@ -11,15 +11,14 @@ class Buffer;
 
 class SimpleRaytracer {
 
-	public:
-		SimpleRaytracer(Scene &scene) : scene_(scene) {}
-		void set_scene(Scene &scene) {scene_=scene;}
+public:
+    SimpleRaytracer(Scene &scene) : scene_(scene) { }
+    void set_scene(Scene &scene) { scene_ = scene; }
 
-//		void render(int width, int height, int fov, Coord& cam);
-		void render(Buffer& buffer, int fov, Coord& cam);
+    void render(Buffer& buffer, int fov, Coord const& cam);
 
-	private:
-		Scene &scene_;
+private:
+    Scene &scene_;
 
 };
 

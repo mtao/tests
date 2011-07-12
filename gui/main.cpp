@@ -10,6 +10,7 @@
 #include "phong_point_light.h"
 #include "simple_scene.h"
 #include "simple_raytracer.h"
+#include "plane.h"
 #include "src/qimage_buffer.h"
 
 
@@ -22,31 +23,37 @@ int main(int argc, char *argv[])
     window->setCentralWidget(viewer);
     window->show();
 
-	int width = 320;
-	int height = 240;
+    int width = 320;
+    int height = 240;
 
-	SimpleScene scene;
-	PhongMaterial metal(scene,
-						RGBColor(0.1,0.1,0.1),
-						RGBColor(0.8,0.8,0.8),
-						RGBColor(0.8,0.8,0.8),
-						2.0);
+    SimpleScene scene;
+    PhongMaterial metal(scene,
+            RGBColor(0.1,0.1,0.1),
+            RGBColor(0.8,0.8,0.8),
+            RGBColor(0.8,0.8,0.8),
+            2.0);
 
-	Sphere sphere(Coord(0,0,4), metal);
-	scene.push_obj(&sphere);
+    Sphere sphere(Coord(0,0,4), metal);
+    scene.push_obj(&sphere);
+//    Plane plane(Vector3d(1.0,0.0,0.0),
+//                Vector3d(0.0,1.0,0.0),
+//                Vector3d(0.0,0.0,-1.0),
+//                metal);
+//    scene.push_obj(&plane);
 
-	PhongPointLight light(Coord(-1.0, -1.0, -1.0),
-						  RGBColor(1.0,1.0,1.0),
-						  RGBColor(1.0,1.0,1.0),
-						  RGBColor(1.0,1.0,1.0));
-	scene.push_light(&light);
+    PhongPointLight light(Coord(-1.0, -1.0, -1.0),
+            RGBColor(1.0,1.0,1.0),
+            RGBColor(1.0,1.0,1.0),
+            RGBColor(1.0,1.0,1.0));
+    scene.push_light(&light);
 
-	Coord cam(0,0,-1);
-	SimpleRaytracer raytracer(scene);
-	QImageBuffer buffer(width, height);
-	raytracer.render(buffer, 60, cam);
+    Coord cam(0,0,-1);
+    SimpleRaytracer raytracer(scene);
+    QImageBuffer buffer(width, height);
+    raytracer.render(buffer, 60, cam);
 
-	viewer->showImage(buffer.qimage());
-	
+    //buffer.setPixel(50, 50, ColorOps::white);
+    viewer->showImage(buffer.qimage());
+
     return a.exec();
 }

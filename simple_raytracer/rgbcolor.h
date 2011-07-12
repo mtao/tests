@@ -15,10 +15,10 @@ using Eigen::Array;
 typedef Array<double,3,1> RGBColor;
 
 namespace ColorOps {
-	const RGBColor black(0.0, 0.0, 0.0);
-	const RGBColor white(1.0, 1.0, 1.0);
-	void clamp(RGBColor& rgb);
-	unsigned int toUint(RGBColor const&);
+    const RGBColor black(0.0, 0.0, 0.0);
+    const RGBColor white(1.0, 1.0, 1.0);
+    void clamp(RGBColor& rgb);
+    unsigned int toUint(RGBColor const&);
 }
 
 //class RGBColor {

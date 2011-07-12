@@ -24,13 +24,12 @@ HEADERS += color.h \
            sphere.h \
            buffer.h \
            array_buffer.h \
-	   triangle.h \
-	   plane.h \
+           triangle.h \
+	       plane.h \
            ../objects/ray.h \
            ../objects/coord.h
 
-SOURCES += main.cpp \
-           material.cpp \
+SOURCES += material.cpp \
            object.cpp \
            phong_material.cpp \
            phong_point_light.cpp \
@@ -40,6 +39,6 @@ SOURCES += main.cpp \
            simple_scene.cpp \
            sphere.cpp \
            buffer.cpp \
-	   triangle.cpp \
-	   plane.cpp \
+           triangle.cpp \
+           plane.cpp \
            ../objects/ray.cpp \
