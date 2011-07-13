@@ -10,15 +10,15 @@ class Material;
 class Sphere : public Object {
 
 	public:
-		Sphere(Coord pos, Material& mat): Object(mat), pos_(pos), radius_(1.0){}
-		Sphere(Coord pos, double radius, Material& mat):Object(mat), pos_(pos), radius_(radius){}
+		Sphere(Coord const& pos, Material& mat): Object(mat), coord_(pos), radius_(1.0) { }
+		Sphere(Coord const& pos, double radius, Material& mat): Object(mat), coord_(pos), radius_(radius) { }
 		double intersect_lambda(Ray const& r) const;
 		Ray incident(Vector3d const& pos) const;
 		double radius() { return radius_; }
-		Coord pos() const { return pos_; }
+		Coord const& pos() const { return coord_; }
 
 	private:
-		Coord pos_;
+		Coord coord_;
 		double radius_;
 		double sphere_intersect(Ray const& r) const;
 

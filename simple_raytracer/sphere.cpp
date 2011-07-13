@@ -7,9 +7,7 @@ using namespace std;
 
 double Sphere::intersect_lambda(Ray const& r) const {
     //change the ray into local coordinates
-    Ray ray(r.start.pos-pos_, pos.orient*r.dir);
-
-
+    Ray ray(r.start.pos - coord_.pos, coord_.orient * r.dir);
 
     double A = ray.dir.dot(ray.dir);
     double B = 2*ray.start.pos.dot(ray.dir);
@@ -48,5 +46,5 @@ double Sphere::intersect_lambda(Ray const& r) const {
 }
 
 Ray Sphere::incident(Vector3d const& pos) const {
-    return Ray(pos,(pos-pos_).normalized());
+    return Ray(coord_,(pos - coord_.pos).normalized());
 }
