@@ -9,15 +9,11 @@ struct Coord {
 
     Coord (Vector3d pos_) : pos(pos_)
     {
-        orient << 1, 0, 0,
-        0, 1, 0,
-        0, 0, 1;
+        orient.setIdentity();
     }
     Coord (double a, double b, double c) : pos(a, b, c)
     {
-        orient << 1, 0, 0,
-        0, 1, 0,
-        0, 0, 1;
+        orient.setIdentity();
     }
     Coord (Vector3d pos_,  Vector3d x, Vector3d y, Vector3d z) :
         pos(pos_) {orient.col(0)=x; orient.col(1)=y; orient.col(2)=z;}
