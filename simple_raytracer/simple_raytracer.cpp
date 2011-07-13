@@ -15,7 +15,6 @@ void SimpleRaytracer::render(Buffer& buffer, int fov, Coord const& cam) {
     // do solving instead of inverse, as more numerically stable...
     // although don't know what decomposition to use.
     // check http://eigen.tuxfamily.org/dox/TutorialLinearAlgebra.html
-    // in terms of speed, nothing gained or lost
     //
     // using c++0x "auto" to let compiler deduce type (too many template parameters)
     // requires gcc 4.4+

@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
     window->setCentralWidget(viewer);
     window->show();
 
-    int width = 320;
-    int height = 240;
+    int width = 640;
+    int height = 480;
 
     SimpleScene scene;
     PhongMaterial metal(scene,
@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
             metal);
     scene.push_obj(&triangle);
 
-    PhongPointLight light(Coord(0.2, -0.2, -0.2),
+    PhongPointLight light(Coord(-5, -0.2, -0.2),
             RGBColor(0.2,0.2,0.2),
             RGBColor(0.2,0.2,0.2),
             RGBColor(0.2,0.2,0.2));

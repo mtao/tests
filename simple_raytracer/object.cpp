@@ -9,6 +9,7 @@
 #include "coord.h"
 #include "ray.h"
 #include "material.h"
+#include <iostream>
 
 Object::~Object() {
 
@@ -20,8 +21,8 @@ RGBColor Object::intersect(Ray const& r, unsigned int bounces_left) const {
     Vector3d pos = r.start.pos + lambda * r.dir;
     if (bounces_left <= 0) {
         Ray inc = incident(pos);
-        return ColorOps::white;
-//        return mat_.intersect(r, inc);
+//        return ColorOps::white;
+        return mat_.intersect(r, inc);
     } else {
         //TODO: add support for moving around scene?
         //mat_intersect(r, );
