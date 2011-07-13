@@ -6,6 +6,9 @@
 using namespace std;
 
 double Sphere::intersect_lambda(Ray const& r) const {
+    // TODO opportunity to somehow cache some of the dot products,
+    // since origins of all the ray are the same point?
+
     //change the ray into local coordinates
     Ray ray(r.start.pos - coord_.pos, coord_.orient * r.dir);
 

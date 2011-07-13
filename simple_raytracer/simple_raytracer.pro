@@ -9,16 +9,7 @@ INCLUDEPATH += . $(EIGEN_PATH) ../objects
 CONFIG -= qt
 message(Using Eigen found at $(EIGEN_PATH))
 
-unix {
-	# treat warnings as errors
-	QMAKE_CXXFLAGS += -Werror
-	# for debugging an profiling
-	QMAKE_CXXFLAGS_DEBUG += -pg
-	QMAKE_LFLAGS_DEBUG += -pg
-	
-	# optimizations
-	QMAKE_CXXFLAGS_RELEASE += -O3
-}
+include(../utils/inc.pro)
 
 # Input
 HEADERS += color.h \
