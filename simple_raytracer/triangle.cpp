@@ -2,11 +2,12 @@
 #include "ray.h"
 #include "math.h"
 #include "material.h"
+#include <iostream>
 
-
-
+using namespace std;
 
 double Triangle::intersect_lambda(Ray const& r) const {
+	cout << "intersection";
 	double lambda=-normal_.dot(r.start.pos)/normal_.dot(r.dir);
 	Vector3d pos=r.start.pos + lambda * r.dir;
 	if(

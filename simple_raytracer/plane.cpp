@@ -8,7 +8,7 @@ using namespace std;
 
 double Plane::intersect_lambda(Ray const& r) const {
     double result = (-n_.dot(r.start.pos))/n_.dot(r.dir);
-    cout << "trying to intersect with plane " << result << " denom " << n_.dot(r.dir) << endl;
+//    cout << "trying to intersect with plane " << result << " denom " << n_.dot(r.dir) << endl;
     return result;
 }
 

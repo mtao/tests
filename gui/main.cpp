@@ -33,18 +33,24 @@ int main(int argc, char *argv[])
             RGBColor(0.8,0.8,0.8),
             2.0);
 
-    Sphere sphere(Coord(0,0,4), metal);
-    scene.push_obj(&sphere);
-//    Plane plane(Vector3d(1.0,0.0,0.0),
-//                Vector3d(0.0,1.0,0.0),
-//                Vector3d(0.0,0.0,-1.0),
-//                metal);
-//    scene.push_obj(&plane);
+    //    Sphere sphere(Coord(0,0,4), metal);
+    //    scene.push_obj(&sphere);
+    //    Plane plane(Vector3d(1.0,0.0,0.0),
+    //                Vector3d(0.0,1.0,0.0),
+    //                Vector3d(0.0,0.0,1.0),
+    //                metal);
+    //    scene.push_obj(&plane);
 
-    PhongPointLight light(Coord(-1.0, -1.0, -1.0),
-            RGBColor(1.0,1.0,1.0),
-            RGBColor(1.0,1.0,1.0),
-            RGBColor(1.0,1.0,1.0));
+    Plane triangle(Vector3d(1.0,0.0,1.0),
+            Vector3d(0.0,1.0,1.0),
+            Vector3d(0.0,0.0,0.0),
+            metal);
+    scene.push_obj(&triangle);
+
+    PhongPointLight light(Coord(0.2, -0.2, -0.2),
+            RGBColor(0.2,0.2,0.2),
+            RGBColor(0.2,0.2,0.2),
+            RGBColor(0.2,0.2,0.2));
     scene.push_light(&light);
 
     Coord cam(0,0,-1);
