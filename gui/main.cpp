@@ -33,17 +33,12 @@ int main(int argc, char *argv[])
             RGBColor(0.8,0.8,0.8),
             2.0);
 
-    //    Sphere sphere(Coord(0,0,4), metal);
-    //    scene.push_obj(&sphere);
-    //    Plane plane(Vector3d(1.0,0.0,0.0),
-    //                Vector3d(0.0,1.0,0.0),
-    //                Vector3d(0.0,0.0,1.0),
-    //                metal);
-    //    scene.push_obj(&plane);
+//    Sphere sphere(Coord(0,0,4), metal);
+//    scene.push_obj(&sphere);
 
     Plane triangle(Vector3d(1.0,0.0,1.0),
             Vector3d(0.0,1.0,1.0),
-            Vector3d(0.0,0.0,0.0),
+            Vector3d(0.0,0.0,1.0),
             metal);
     scene.push_obj(&triangle);
 
