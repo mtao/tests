@@ -3,11 +3,12 @@ TARGET = RenderGui
 INCLUDEPATH = ../simple_raytracer \
     ../objects \
     $(EIGEN_PATH)
-LIBS += ../simple_raytracer/libsimple_raytracer.so
 QT += core \
     gui
     
 include(../utils/inc.pro)
+
+LIBS += ../simple_raytracer/libsimple_raytracer.$$STATIC_LIB_EXTENSION
 
 HEADERS += src/ImageViewer.h \
 	src/qimage_buffer.h

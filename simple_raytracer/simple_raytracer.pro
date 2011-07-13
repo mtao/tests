@@ -7,6 +7,7 @@ TARGET =
 DEPENDPATH += .
 INCLUDEPATH += . $(EIGEN_PATH) ../objects
 CONFIG -= qt
+CONFIG += staticlib
 message(Using Eigen found at $(EIGEN_PATH))
 
 include(../utils/inc.pro)

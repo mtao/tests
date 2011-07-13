@@ -3,7 +3,11 @@
 #include "rgbcolor.h"
 #include "light_source.h"
 
-PhongMaterial::PhongMaterial(Scene& scene, RGBColor ambient, RGBColor diffuse, RGBColor specular, double specular_pow) :
+PhongMaterial::PhongMaterial(Scene& scene,
+                             RGBColor const& ambient,
+                             RGBColor const& diffuse,
+                             RGBColor const& specular,
+                             double specular_pow) :
 	Material(scene),
 	ambient_(ambient),
 	diffuse_(diffuse),
@@ -13,7 +17,12 @@ PhongMaterial::PhongMaterial(Scene& scene, RGBColor ambient, RGBColor diffuse, R
 
 }
 
-PhongMaterial::PhongMaterial(Scene& scene, RGBColor ambient, RGBColor diffuse, RGBColor specular, double specular_pow, bool translucent) :
+PhongMaterial::PhongMaterial(Scene& scene,
+                             RGBColor const& ambient,
+                             RGBColor const& diffuse,
+                             RGBColor const& specular,
+                             double specular_pow,
+                             bool translucent) :
 	Material(scene),
 	ambient_(ambient),
 	diffuse_(diffuse),

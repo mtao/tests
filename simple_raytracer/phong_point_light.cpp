@@ -3,7 +3,10 @@
 #include "material.h"
 #include "math.h"
 
-PhongPointLight::PhongPointLight(Coord pos, RGBColor ambient, RGBColor diffuse, RGBColor specular) :
+PhongPointLight::PhongPointLight(Coord pos,
+                                 RGBColor const& ambient,
+                                 RGBColor const& diffuse,
+                                 RGBColor const& specular) :
 	pos_(pos),
 	ambient_(ambient),
 	diffuse_(diffuse),

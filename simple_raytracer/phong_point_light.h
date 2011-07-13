@@ -9,7 +9,7 @@ class Material;
 
 class PhongPointLight: public LightSource {
 	public:
-		PhongPointLight(Coord pos, RGBColor ambient, RGBColor diffuse, RGBColor specular);
+		PhongPointLight(Coord pos, RGBColor const& ambient, RGBColor const& diffuse, RGBColor const& specular);
 		RGBColor shade(Ray const& ray, Ray const& incident, Material const& mat) const;
 		
 	private:
