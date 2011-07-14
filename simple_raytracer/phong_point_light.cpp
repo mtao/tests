@@ -24,8 +24,8 @@ RGBColor PhongPointLight::shade(Ray const& ray, Ray const& incident, Material co
 	 * This stuff has to be part of material's intersect...
 	 */
 	double incident_angle = ray_dir.dot(normal);
-	double reflected_angle_diff = ray_dir.dot(2 * (normal.dot(light_dir) * normal - light_dir));
+//	double reflected_angle_diff = ray_dir.dot(2 * (normal.dot(light_dir) * normal - light_dir));
 	return mat.ambient() * ambient_
-	       + incident_angle * (diffuse_ * mat.diffuse())
-	       + ::pow(reflected_angle_diff, mat.specular_pow()) * mat.specular() * specular_;
+	       + incident_angle * (diffuse_ * mat.diffuse());
+//	       + ::pow(reflected_angle_diff, mat.specular_pow()) * mat.specular() * specular_;
 }

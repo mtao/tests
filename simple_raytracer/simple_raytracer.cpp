@@ -9,7 +9,7 @@ using namespace std;
 
 
 // Camera operates as if it is -1 in the z direction facing to +1 in z direction.
-void SimpleRaytracer::render(Buffer& buffer, int fov, Coord const& cam) {
+void SimpleRaytracer::render(Buffer& buffer, int /*fov*/, Coord const& cam) {
 //    Matrix3d cam2world = cam.orient.inverse();
 
     // do solving instead of inverse, as more numerically stable...
@@ -23,10 +23,10 @@ void SimpleRaytracer::render(Buffer& buffer, int fov, Coord const& cam) {
     /* cache width and height for for loop */
     int width = buffer.width();
     int height = buffer.height();
-    double scale_factor = ::sin(fov*0.017453292519943295);
-    //	double scale_factor = 1.0 / buffer.width();
-    double half_width = width / 2.0;
-    double half_height = height / 2.0;
+//    double scale_factor = ::sin(fov*0.017453292519943295);
+    	double scale_factor = 1.5 / width;
+    double half_width = 1.5 / 2.0;
+    double half_height = (half_width * height) / width;
     for (int i = 0; i < width; i++) {
         for(int j = 0; j < height; j++) {
             Vector3d cam_ray_dir = Vector3d(i * scale_factor - half_width, j * scale_factor - half_height, 1);
